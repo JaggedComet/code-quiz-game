@@ -1,0 +1,17 @@
+ul{
+    padding:0px;
+}
+
+/* Aligns all the elements with the class of row to the center */
+.row {
+    text-align: center;
+}
+
+p  {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Hides the div containing question until quiz start is pressed. */
+#question {
+    display: none;
+}
