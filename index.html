@@ -13,22 +13,16 @@
 
 <header>
 
-<!-- Going to repurpose the default navbar from bootstrap into a score button -->
+    <!-- Going to repurpose the default navbar from bootstrap into a score button -->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-
-        <a class="navbar-brand" href="#">High Score</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
+        <button class="btn btn-danger" id="score">High Score</button>
     </nav>
 
 </header>
 
 <body>
 
-<!-- Made a div for title using bootstrap 4.5 classes. -->
+    <!-- Made a div for title using bootstrap 4.5 classes. -->
     <div class="title">
 
         <div class="row">
@@ -41,20 +35,38 @@
 
     </div>
 
-<!-- Made a div to input text from Javascript with a span for the text. -->
-    <div class="start-quiz">
-        <span id="quiz-text"></span>
-    </div>
-
-<!-- Made a div to display the questions with that includes the id of questions so javascript can run on it. -->
-    <div class="row">
-
-        <div id="question" class="col-12 my-5 alert-success">
+    <!-- Made a div to show the timer for the quiz. -->
+    <div class="display-timer">
+        <div class='row'>
+            <div class="col col-md-8 offset-md-2">
+                <div class="alert alert-danger" role="alert">
+                    <h2 id="timer">Timer: </h2>
+                </div>
+            </div>
         </div>
- 
     </div>
 
-<script src="./assets/script/script.js"></script>
+    <!-- Made a div to show the information about the quiz andbutton -->
+    <div class='display-quiz'>
+        <div class="display-start">
+            <div class="row">
+                <div class="col col-md-8 offset-md-2">
+                    <p>This is a timed quiz. You're scored on how much time you have left at the end of the quiz, each
+                        wrong answer subtracts 10s from your timer.</p>
+                    <button class="btn btn-danger" id="start">Start</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Made a div to display the questions with that includes the id of questions so javascript can run on it. -->
+        <div class="display-question">
+            <div class="row">
+                <div id="question" class="col-12 my-5 alert-success">
+                </div>
+            </div>
+        </div>
+
+        <script src="./assets/script/script.js"></script>
 </body>
 
 </html>

@@ -1,21 +1,65 @@
 var questionDiv = document.querySelector("#question");
+var startButtonEl = document.querySelector("#start")
+var timerEl = document.querySelector("#timer")
+
+function countdown() {
+  var timeLeft = 5;
+
+  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+  var timeInterval = setInterval(function () {
+    // As long as the `timeLeft` is greater than 1
+    if (timeLeft > 1) {
+      // Set the `textContent` of `timerEl` to show the remaining seconds
+      timerEl.textContent = timeLeft + ' seconds remaining';
+      // Decrement `timeLeft` by 1
+      timeLeft--;
+    } else if (timeLeft === 1) {
+      // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+      timerEl.textContent = timeLeft + ' second remaining';
+      timeLeft--;
+    } else {
+      // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+      timerEl.textContent = '';
+      // Use `clearInterval()` to stop the timer
+      clearInterval(timeInterval);
+      // Call the `displayMessage()` function
+      displayMessage();
+    }
+  }, 1000);
+}
 
 
-// Start the Quiz
-function
-
-
-
+// Variable for questions. Prompts the question, then you choose from an arrow of answers to see if it"s right
 var questions = [
   {
-    prompt: "What is the color of the sky?",
-    options: ["Red", "Blue", "Green", "Yellow"],
-    answer: "Blue",
+    prompt: "How do we attach the Javascript file to HTML?",
+    options: ["Link it like a stylesheet.", "Add a <script></script> tag with the link to the Javascript at the bottom of the body in HTML.", "You copy the Javascript directly into HTML.", "You use the browser to do it."],
+    answer: "Add a <script></script> tag with the link to the Javascript at the bottom of the body in HTML.",
   },
   {
-    prompt: "Which shape is round?",
-    options: ["Square", "Triangle", "Trapezoid", "Circle"],
-    answer: "Circle",
+    prompt: "Where is the correct place to insert the Javascript in HTML?",
+    options: ["Head", "Header", "Body", "All Three are correct"],
+    answer: "Body"
+  },
+  {
+    prompt: "External Javascript file must contain a script tag",
+    options: ["True", "False"],
+    answer: "False",
+  },
+  {
+    prompt: "How do you add comments in Javascript?",
+    options: ["/*comment*/", "/ comment /", "<!--comment-->>", "// comment"],
+    answer: "// comment",
+  },
+  {
+    prompt: "Javascript is the same as Java.",
+    options: ["True", "False"],
+    answer: "False",
+  },
+  {
+    prompt: "Javascript is the same as JQuery.",
+    options: ["False", "True"],
+    answer: "False",
   },
 ];
 
@@ -34,7 +78,7 @@ function showQuestion() {
   questionDiv.innerHTML = "";
 
   if (questionIdx >= questions.length) {
-    alert("No more questions");
+    alert("Quiz is done");
     return;
   }
 

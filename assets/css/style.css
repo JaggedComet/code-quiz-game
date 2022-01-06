@@ -7,11 +7,14 @@ ul{
     text-align: center;
 }
 
-p  {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 
 /* Hides the div containing question until quiz start is pressed. */
-#question {
-    display: none;
+.display-timer {
+    text-align: center;
 }
+
+/* hides these elements until unhidden by javascript */
+.display-timer, .display-question {
+    /* display: none; */
+}
+
